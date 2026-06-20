@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inkwell — Write</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <span class="mark">Inkwell</span>
+    <span class="tag">A BLOG PLATFORM DEMO</span>
+  </a>
+  <nav id="authArea"></nav>
+</header>
+
+<main class="wide">
+  <p style="margin-bottom:20px;"><a href="index.html">← Back to all posts</a></p>
+  <div class="page-head">
+    <h1 id="pageTitle">New post</h1>
+  </div>
+
+  <div id="authGate"></div>
+
+  <div id="editorFormWrap">
+    <div class="form-error" id="editorError"></div>
+    <form id="editorForm">
+      <div class="editor-field">
+        <label for="titleInput">Title</label>
+        <input type="text" id="titleInput" placeholder="Give your post a title" required>
+      </div>
+      <div class="editor-field">
+        <label for="contentInput">Content</label>
+        <textarea id="contentInput" placeholder="Write here…" required></textarea>
+      </div>
+      <div class="editor-actions">
+        <button type="submit" class="btn">Publish</button>
+        <a class="btn secondary" href="index.html">Cancel</a>
+      </div>
+    </form>
+  </div>
+</main>
+
+<!-- Auth modal -->
+<div class="modal-overlay" id="authModalOverlay">
+  <div class="modal">
+    <button class="modal-close" id="authModalClose" aria-label="Close">✕</button>
+    <div class="tabs">
+      <button class="tab-btn active" id="loginTab" type="button">Log in</button>
+      <button class="tab-btn" id="registerTab" type="button">Create account</button>
+    </div>
+    <div class="form-error" id="authError"></div>
+
+    <form id="loginForm">
+      <div class="field"><label for="loginEmail">Email</label><input type="email" id="loginEmail" required></div>
+      <div class="field"><label for="loginPassword">Password</label><input type="password" id="loginPassword" required></div>
+      <div class="modal-actions"><button type="submit" class="btn">Log in</button></div>
+      <p class="modal-sub">Demo login: demo@example.com / Demo@123</p>
+    </form>
+
+    <form id="registerForm" style="display:none">
+      <div class="field"><label for="regName">Name</label><input type="text" id="regName" required></div>
+      <div class="field"><label for="regEmail">Email</label><input type="email" id="regEmail" required></div>
+      <div class="field"><label for="regPassword">Password</label><input type="password" id="regPassword" minlength="6" required></div>
+      <div class="modal-actions"><button type="submit" class="btn">Create account</button></div>
+    </form>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/editor.js"></script>
+</body>
+</html>
